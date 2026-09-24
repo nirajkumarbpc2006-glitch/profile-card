@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile Card | Niraj Kumar</title>
+    <meta name="description" content="Interactive 3D Personal Profile Card built with HTML, CSS, and JavaScript.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Animated Gradient Orbs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Top Navigation link back -->
+    <nav class="hub-nav">
+        <a href="../index.html" class="back-hub-btn"><i class="fa-solid fa-arrow-left"></i> Back to Master Hub</a>
+    </nav>
+
+    <!-- Main Card Container (Supports 3D Tilt) -->
+    <main class="card-wrapper">
+        <div class="profile-card" id="profileCard">
+            <!-- Holographic / Gloss Overlay -->
+            <div class="card-glare"></div>
+
+            <!-- Card Banner -->
+            <div class="card-banner">
+                <span class="status-badge available">
+                    <span class="status-dot"></span> Available for Hire
+                </span>
+                <button class="share-btn" id="shareCardBtn" title="Copy Profile Link">
+                    <i class="fa-solid fa-share-nodes"></i>
+                </button>
+            </div>
+
+            <!-- Avatar Section -->
+            <div class="avatar-container">
+                <div class="avatar-ring">
+                    <div class="avatar-img-wrapper">
+                        <!-- Custom styled SVG / high-tech profile illustration -->
+                        <div class="avatar-placeholder">
+                            <i class="fa-solid fa-user-astronaut"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="verified-badge" title="Verified Developer">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+            </div>
+
+            <!-- Profile Info -->
+            <div class="profile-info">
+                <h1 class="profile-name">Niraj Kumar</h1>
+                <p class="profile-role">Full-Stack Web Developer & B.Tech CSE</p>
+                <p class="profile-location">
+                    <i class="fa-solid fa-location-dot"></i> Bihar, India &bull; Teerthanker Mahaveer Univ.
+                </p>
+                <p class="profile-bio">
+                    Crafting elegant, high-performance web applications with Java, C, and the MERN stack. Passionate gamer &amp; cricket enthusiast.
+                </p>
+            </div>
+
+            <!-- Quick Metrics / Stats -->
+            <div class="profile-stats">
+                <div class="stat-item">
+                    <span class="stat-value">10+</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-value">4+</span>
+                    <span class="stat-label">Tech Stacks</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">Dedication</span>
+                </div>
+            </div>
+
+            <!-- Key Skill Tags -->
+            <div class="skill-tags">
+                <span class="tag"><i class="fa-brands fa-java"></i> Java</span>
+                <span class="tag"><i class="fa-solid fa-code"></i> C</span>
+                <span class="tag"><i class="fa-brands fa-react"></i> React.js</span>
+                <span class="tag"><i class="fa-brands fa-node-js"></i> Node.js</span>
+                <span class="tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+                <span class="tag"><i class="fa-solid fa-database"></i> MongoDB</span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="profile-actions">
+                <a href="../task-5-portfolio/index.html#contact" class="btn btn-primary">
+                    <i class="fa-solid fa-paper-plane"></i> Contact Me
+                </a>
+                <button class="btn btn-secondary" id="openSkillsModalBtn">
+                    <i class="fa-solid fa-id-badge"></i> Quick Info
+                </button>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-row">
+                <a href="https://github.com" target="_blank" rel="noopener" class="social-btn github" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-btn linkedin" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener" class="social-btn twitter" aria-label="Twitter">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="mailto:niraj.kumar.cse@example.com" class="social-btn email" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Quick Info Popup Modal -->
+    <div class="modal-backdrop" id="skillsModal">
+        <div class="modal-card">
+            <button class="modal-close" id="closeModalBtn">&times;</button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>Academic &amp; Profile Summary</h3>
+            </div>
+            <div class="modal-body">
+                <div class="modal-info-group">
+                    <h4><i class="fa-solid fa-university"></i> Education</h4>
+                    <p><strong>B.Tech in Computer Science & Engineering</strong></p>
+                    <p class="sub">Teerthanker Mahaveer University (TMU)</p>
+                </div>
+                <div class="modal-info-group">
+                    <h4><i class="fa-solid fa-laptop-code"></i> Core Competencies</h4>
+                    <p>Java, C Programming, HTML5, CSS3, JavaScript (ES6+), React.js, Express, Node.js, MongoDB.</p>
+                </div>
+                <div class="modal-info-group">
+                    <h4><i class="fa-solid fa-gamepad"></i> Interests &amp; Hobbies</h4>
+                    <p>Playing Competitive PC/Mobile Video Games &amp; Cricket.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="../task-5-portfolio/index.html" class="btn btn-primary btn-full">
+                    View Full Portfolio <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span>Link copied to clipboard!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
